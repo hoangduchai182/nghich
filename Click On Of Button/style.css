@@ -1,0 +1,65 @@
+body {
+  background-color: skyblue;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  margin: 10px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.status-labels {
+  font-family: sans-serif;
+  padding: 0.7rem;
+}
+
+label {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 30px;
+  height: 50px;
+  position: relative;
+  width: 120px;
+  box-shadow: 2px 2px 10px #aaa inset, -2px -2px 10px #aaa inset;
+}
+
+label::after {
+  background-color: #de5b52;
+  border: 2px solid #000;
+  border-radius: 100%;
+  box-shadow: 4px 0px 3px #777;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 40px;
+  aspect-ratio: 1/ 1;
+  transition: 450ms ease;
+}
+
+input[type="checkbox"]:checked + label::after {
+  box-shadow: -4px 0px 3px #777;
+  background-color: lightgreen;
+  left: 70px;
+  transition: 450ms ease;
+}
+
+.state-on {
+  font-size: 1.4em;
+}
+
+input[type="checkbox"]:checked ~ .state-on {
+  color: #fff;
+  font-weight: bold;
+}
+
+input {
+  display: none;
+}

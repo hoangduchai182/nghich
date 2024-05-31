@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="lock"></div>
+    <script>
+      const week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+      function updateTime() {
+        let now = new Date();
+
+        document.getElementById("time").innerText =
+          zeroPadding(now.getHours(), 2) +
+          ":" +
+          zeroPadding(now.getMinutes(), 2) +
+          ":" +
+          zeroPadding(now.getSeconds(), 2);
+      }
+
+      function zeroPadding(num, digit) {
+        return String(num).padStart(digit, "0");
+      }
+    </script>
+  </body>
+</html>
